@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mariusmod:item/raw_mariusite"
+    "layer0": "tristanmod:item/tristanium_ingot"
   }
 }

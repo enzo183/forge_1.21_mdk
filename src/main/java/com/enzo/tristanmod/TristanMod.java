@@ -1,6 +1,6 @@
-package com.enzo.mariusmod;
+package com.enzo.tristanmod;
 
-import com.enzo.mariusmod.item.ModItems;
+import com.enzo.tristanmod.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -18,14 +18,14 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(MariusMod.MOD_ID)
-public class MariusMod
+@Mod(TristanMod.MOD_ID)
+public class TristanMod
 {
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "mariusmod";
+    public static final String MOD_ID = "tristanmod";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
-    public MariusMod()
+    public TristanMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -51,8 +51,8 @@ public class MariusMod
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.MARIUSITE_INGOT);
-            event.accept(ModItems.RAW_MARIUSITE);
+            event.accept(ModItems.TRISTANIUM_INGOT);
+            event.accept(ModItems.RAW_TRISTANIUM);
         }
     }
 
