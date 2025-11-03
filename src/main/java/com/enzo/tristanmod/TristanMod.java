@@ -1,5 +1,6 @@
 package com.enzo.tristanmod;
 
+import com.enzo.tristanmod.block.Modblocks;
 import com.enzo.tristanmod.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -32,6 +33,7 @@ public class TristanMod
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
         ModItems.register(modEventBus);
+        Modblocks.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -53,6 +55,10 @@ public class TristanMod
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.TRISTANIUM_INGOT);
             event.accept(ModItems.RAW_TRISTANIUM);
+        }
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept((Modblocks.TRISTANIUM_BLOCK));
+            event.accept((Modblocks.TRISTANIUM_ORE));
         }
     }
 
